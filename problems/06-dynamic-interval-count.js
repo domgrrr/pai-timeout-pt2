@@ -10,6 +10,23 @@ return the Timeout object for the interval.
 In addition to Mocha, we recommend that you test your code manually using 
 node with the examples below.
 
+input:  function, number, number
+output: function, string, object
+
+1.  Set a VARIABLE called count = 0
+2.  Set a VARIABLE interval = setInterval
+3.  CB()
+4.  Count++
+5.  Use a CONDITIONAL IF statement with the condition
+6.  Use an ELSE statement
+7.  
+
+***********************************************************************/
+
+function dynamicIntervalCount(cb, delay, amount) {
+
+}
+
 Examples:
 
 dynamicIntervalCount(function() {
@@ -22,12 +39,6 @@ const timeoutObject = dynamicIntervalCount(function() {
 }, 500); // prints 'hi' at 500ms intervals indefinitely
 
 console.log(timeoutObject); // Timeout { ... }
-***********************************************************************/
-
-function dynamicIntervalCount(cb, delay, amount) {
-  // Your code here 
-}
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = dynamicIntervalCount;
