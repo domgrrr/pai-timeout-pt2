@@ -8,7 +8,25 @@ the callback.
 In addition to Mocha, we recommend that you test your code manually using 
 node with the examples below.
 
-Examples
+input:  function, number
+output: string
+
+1.  Use a RETURN statement return function() 
+2.  Use setTimeout
+3.  callback(...args)
+4.  , delay);
+
+***********************************************************************/
+
+function postponeWithArgs(cb, delay) {
+  return function(...args) {
+    setTimeout(() => {
+      cb(...args);
+    }, delay);
+  };
+}
+
+// Examples
 
 const greet = (person) => console.log('Hello ' + person + '!');
 const slowGreet = postponeWithArgs(greet, 1000);
@@ -19,13 +37,6 @@ const printSum = (num1, num2) => console.log(num1 + num2);
 const slowPrintSum = postponeWithArgs(printSum, 500);
 slowPrintSum(4, 3); // prints '7' after 500 ms
 slowPrintSum(2, 8); // prints '10' after 500 ms
-
-***********************************************************************/
-
-function postponeWithArgs(cb, delay) {
-  // Your code here 
-}
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = postponeWithArgs;
